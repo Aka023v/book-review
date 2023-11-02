@@ -11,6 +11,6 @@ CREATE TABLE IF NOT EXISTS `review`
   PRIMARY KEY (`id`)
 );
 
-INSERT INTO `tweet`(`poster`, `book_name`, `review`) VALUES
+INSERT INTO `review`(`poster`, `book_name`, `review`) VALUES
 ('さくら', 'ポケモン', 'キャラが可愛く、大人から子供まで楽しめると思います。'),
 ('もみじ', '桃太郎', '幼稚園の子供に読み聞かせるのにいい本でした。');
