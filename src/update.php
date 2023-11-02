@@ -1,14 +1,15 @@
 <?php
 $id = filter_input(INPUT_POST, 'id');
 $poster = filter_input(INPUT_POST, 'poster');
-$tweet = filter_input(INPUT_POST, 'tweet');
+$book_name = filter_input(INPUT_POST, 'book_name');
+$review = filter_input(INPUT_POST, 'review');
 
 $dbh = new PDO(
-  'mysql:dbname=twitter;host=mysql;charset=utf8',
+  'mysql:dbname=book_review;host=mysql;charset=utf8',
   'root',
   'password'
 );
-$query = "UPDATE tweet SET poster='$poster', tweet='$tweet' WHERE id = '$id'";
+$query = "UPDATE review SET poster='$poster', book_name='$book_name', review='$review' WHERE id = '$id'";
 $dbh->query($query);
 
 header('Location: ./index.php');

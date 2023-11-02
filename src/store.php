@@ -1,14 +1,15 @@
 <?php
 $poster = filter_input(INPUT_POST, 'poster');
-$tweet = filter_input(INPUT_POST, 'tweet');
+$book_name = filter_input(INPUT_POST, 'book_name');
+$review = filter_input(INPUT_POST, 'review');
 
 $dbh = new PDO(
-    'mysql:dbname=twitter;host=mysql;charset=utf8',
+    'mysql:dbname=book_review;host=mysql;charset=utf8',
     'root',
     'password'
 );
 
-$query = "INSERT INTO `tweet` (`poster`, `tweet`) VALUES ('$poster', '$tweet')";
+$query = "INSERT INTO `review` (`poster`, `book_name`, `review`) VALUES ('$poster', '$book_name', '$review')";
 $dbh->query($query);
 header("Location: ./index.php");
 ?>
